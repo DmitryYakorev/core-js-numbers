@@ -17,7 +17,7 @@ describe('core-js-numbers', () => {
     }
   );
 
-  it.optional('getAverage should return an average of two numbers', () => {
+  it('getAverage should return an average of two numbers', () => {
     assert.equal(tasks.getAverage(5, 5), 5);
     assert.equal(tasks.getAverage(10, 0), 5);
     assert.equal(tasks.getAverage(-3, 3), 0);
@@ -31,7 +31,7 @@ describe('core-js-numbers', () => {
     );
   });
 
-  it.optional(
+  it(
     'getDistanceBetweenPoints should return a distance between points',
     () => {
       assert.equal(tasks.getDistanceBetweenPoints(0, 0, 0, 1), 1);
@@ -43,7 +43,7 @@ describe('core-js-numbers', () => {
     }
   );
 
-  it.optional(
+  it(
     'getLinearEquationRoot should return a root of linear equation',
     () => {
       assert.equal(tasks.getLinearEquationRoot(5, -10), 2);
@@ -52,7 +52,7 @@ describe('core-js-numbers', () => {
     }
   );
 
-  it.optional(
+  it(
     'getAngleBetweenVectors should return a angle (in radians) between two linear vectors',
     () => {
       assert.equal(tasks.getAngleBetweenVectors(1, 0, 0, 1), Math.PI / 2);
@@ -62,7 +62,7 @@ describe('core-js-numbers', () => {
     }
   );
 
-  it.optional('getLastDigit should return a last digit of the number', () => {
+  it('getLastDigit should return a last digit of the number', () => {
     assert.equal(tasks.getLastDigit(100), 0);
     assert.equal(tasks.getLastDigit(37), 7);
     assert.equal(tasks.getLastDigit(11), 1);
@@ -70,7 +70,7 @@ describe('core-js-numbers', () => {
     assert.equal(tasks.getLastDigit(0), 0);
   });
 
-  it.optional(
+  it(
     'parseNumberFromString should return a number from the given string representation',
     () => {
       assert.equal(tasks.parseNumberFromString('100'), 100);
@@ -79,7 +79,7 @@ describe('core-js-numbers', () => {
     }
   );
 
-  it.optional(
+  it(
     'getParallelepipedDiagonal should return a diagonal length of the rectangular parallepiped',
     () => {
       assert.equal(tasks.getParallelepipedDiagonal(1, 1, 1), Math.sqrt(3));

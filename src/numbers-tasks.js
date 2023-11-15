@@ -131,8 +131,10 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  const res = String(value).slice(-1);
-  return res;
+  console.log(value);
+  const res = value.toString()[value.toString().length - 1];
+  console.log(res);
+  return Number(res);
 }
 
 /**
@@ -147,7 +149,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-  const res = +value;
+  const res = Number(value);
   return res;
 }
 
@@ -165,7 +167,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
-  const res = Math.sqrt(a ** 2 + b ** 2 + c ** 2);
+  const res = (a ** 2 + b ** 2 + c ** 2) ** 0.5;
   return res;
 }
 
@@ -186,8 +188,9 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  const res = Math.round(num / 10 ** pow) * 10 ** pow;
+  return res;
 }
 
 /**
@@ -207,8 +210,12 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  let res = true;
+  for (let i = 2; i <= Math.floor(Math.sqrt(n)); i += 1)
+    if (n % i === 0) res = false;
+
+  return res;
 }
 
 /**
@@ -226,8 +233,9 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  const res = +value || def;
+  return res;
 }
 
 /**
@@ -241,8 +249,8 @@ function toNumber(/* value, def */) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  return num ** 3;
 }
 
 /**
@@ -258,8 +266,9 @@ function getCube(/* num */) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  const phi = (1 + 5 ** 0.5) / 2;
+  return Math.trunc((phi ** index - (-phi) ** -index) / (2 * phi - 1));
 }
 
 /**
