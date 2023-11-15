@@ -131,10 +131,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  console.log(value);
-  const res = value.toString()[value.toString().length - 1];
-  console.log(res);
-  return Number(res);
+  return value % 10;
 }
 
 /**
@@ -282,8 +279,8 @@ function getFibonacciNumber(index) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  return ((1 + n) / 2) * n;
 }
 
 /**
